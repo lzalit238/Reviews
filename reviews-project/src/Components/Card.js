@@ -1,15 +1,17 @@
 import React,{useState} from 'react'
-import {AiOutlineArrowRight, AiOutlineArrowLeft} from 'react-icons/ai'
+import {AiFillCaretLeft, AiFillCaretRight} from 'react-icons/ai'
 import data from '../utils/data'
 const Card = ({ data }) => { 
     
     const [show, setShow] = useState(0)
-    const {id, rating, name, job, image, text} = data[index]
-    const nextPerson = () => {
+    const { id, rating, name, job, image, text } = data[index]
+    
+
+    const previousPerson = () => {
         setShow()
     }
-    const previousPerson = () => {
-
+    const nextPerson = () => {
+        setShow()
     }
     return (
         <div className='container'>
@@ -22,9 +24,12 @@ const Card = ({ data }) => {
                 <h4>{data.job}</h4>
                 <h5>{data.rating} stars</h5>
                 <p>{data.text}</p>
-                
-                <AiOutlineArrowLeft onClick={switchCard}/>
-                <AiOutlineArrowRight onClick={switchCard}/>
+                <button>
+                    <AiFillCaretLeft onClick={previousPerson}/>
+                </button>
+                <button>
+                    <AiFillCaretRight onClick={nextPerson}/>
+                </button>
             </div>
         </div>
     )
