@@ -4,8 +4,16 @@ import data from '../utils/data'
 const Card = ({ data }) => { 
     
     const [show, setShow] = useState(0)
-    const { id, rating, name, job, image, text } = data[index]
+    const { id, rating, name, job, image, text } = people[index]
     
+    const myNum = (number) => {
+        if (number > people.length - 1) {
+            return 0;
+        }
+        if (number < 0) {
+            return people.length - 1;
+        }
+    }
 
     const previousPerson = () => {
         setShow()
