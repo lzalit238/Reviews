@@ -20,12 +20,15 @@ body h2 {
 }
 
 .container {
+  margin: auto;
   display: flex;
   justify-content: center;
   background-color: white;
   min-width: 60%;
   max-width: 60%;
   box-shadow: 5px 5px 10px gray;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .contain-text {
@@ -46,9 +49,12 @@ body h2 {
 }
 
 img {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
   border-radius: 50%;
-  max-width: 200px;
-  max-height: 200px;
 }
 img .profile-bg {
   background-color: #2d98da;
