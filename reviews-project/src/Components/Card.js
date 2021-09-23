@@ -1,17 +1,17 @@
 import React,{useState} from 'react'
 import {AiFillCaretLeft, AiFillCaretRight} from 'react-icons/ai'
-import data from '../utils/data'
-const Card = ({ data }) => { 
+// import data from '../utils/data'
+const Card = ({data}) => { 
     
     const [show, setShow] = useState(0)
-    const { id, rating, name, job, image, text } = people[index]
+    const { id, rating, name, job, image, text } = data[show]
     
     const myNum = (number) => {
-        if (number > people.length - 1) {
+        if (number > data.length - 1) {
             return 0;
         }
         if (number < 0) {
-            return people.length - 1;
+            return data.length - 1;
         }
     }
 
@@ -24,14 +24,14 @@ const Card = ({ data }) => {
     return (
         <div className='container'>
            
-            <div key={data.id}>
+            <div key={id}>
                 <div>
-                    {data.image}
+                    {image}
                 </div>
-                <h2>{data.name}</h2>
-                <h4>{data.job}</h4>
-                <h5>{data.rating} stars</h5>
-                <p>{data.text}</p>
+                <h2>{name}</h2>
+                <h4>{job}</h4>
+                <h5>{rating} stars</h5>
+                <p>{text}</p>
                 <button>
                     <AiFillCaretLeft onClick={previousPerson}/>
                 </button>
