@@ -15,27 +15,35 @@ const Card = ({data}) => {
         }
     }
 
+
     const previousPerson = () => {
-        setShow()
+        setShow(show - 1)
+        if (show === 0) {
+            setShow(data.length - 1);
+        }
     }
     const nextPerson = () => {
-        setShow()
+        setShow(show + 1)
+        if (show < 0) {
+            setShow(data.length - 1);
+        }
     }
     return (
         <div className='container'>
            
             <div key={id}>
-                <div>
-                    {image}
+                <div className='profile-bg'>
+                    <img src={image} alt={name} />
                 </div>
+
                 <h2>{name}</h2>
                 <h4>{job}</h4>
-                <h5>{rating} stars</h5>
-                <p>{text}</p>
-                <button>
+                {/* <h5>{rating} stars</h5> */}
+                <p className='contain-text'>{text}</p>
+                <button className='btn'>
                     <AiFillCaretLeft onClick={previousPerson}/>
                 </button>
-                <button>
+                <button className='btn'>
                     <AiFillCaretRight onClick={nextPerson}/>
                 </button>
             </div>
